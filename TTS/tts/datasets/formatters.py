@@ -265,7 +265,7 @@ def common_voice(root_path, meta_file, ignored_speakers=None):
             if isinstance(ignored_speakers, list):
                 if speaker_name in ignored_speakers:
                     continue
-            wav_file = os.path.join(root_path, "clips", cols[1].replace(".mp3", ".wav"))
+            wav_file = os.path.join(root_path, "wavclips", cols[1].replace(".mp3", ".wav"))
             items.append(
                 {"text": text, "audio_file": wav_file, "speaker_name": "MCV_" + speaker_name, "root_path": root_path}
             )
