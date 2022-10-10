@@ -14,15 +14,15 @@ dataset_config = BaseDatasetConfig(
     name="common_voice", meta_file_train="train.tsv", meta_file_val="test.tsv", path=os.path.join(output_path, "cv-corpus-10.0-2022-07-04/es/")
 )
 audio_config = VitsAudioConfig(
-    sample_rate=22050, win_length=1024, hop_length=256, num_mels=80, mel_fmin=0, mel_fmax=None
+    sample_rate=16000, win_length=1024, hop_length=256, num_mels=80, mel_fmin=0, mel_fmax=None
 )
 
 config = VitsConfig(
     audio=audio_config,
     run_name="vits_common_voice",
-    batch_size=32,
-    eval_batch_size=16,
-    batch_group_size=5,
+    batch_size=8,
+    eval_batch_size=4,
+    batch_group_size=0,
     num_loader_workers=4,
     num_eval_loader_workers=4,
     run_eval=True,
